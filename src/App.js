@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import './App.css';
 import Hero from './components/Hero/Hero';
 import Projects from './components/Project/Project';
-
+import Testimonials from './components/Testinomial/Testinomial';
 const projects = [
   {
     title: "Project 1",
@@ -57,6 +57,7 @@ function App() {
      <Projects
      projects={projects}
       />
+    <Testimonials/>
     </div>
   );
 }

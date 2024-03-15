@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Import icons from react-icons library
+import { Link } from 'react-scroll';
 import SideNav from './SideNav';
 
 const Header = () => {
@@ -21,7 +22,16 @@ const Header = () => {
         </div>
         <nav className="md:flex md:space-x-10 md:m-5 hidden md:block">
           <a href="#" className="block md:inline-block hover:text-accent">Home</a>
-          <a href="#" className="block md:inline-block hover:text-accent">Projects</a>
+          {/* Use Link from react-scroll for smooth scrolling */}
+          <Link
+            to="projects-section"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="block md:inline-block hover:text-accent"
+          >
+            Projects
+          </Link>
           <a href="#" className="block md:inline-block hover:text-accent">Skills</a>
           <a href="#" className="block md:inline-block hover:text-accent">Blog</a>
           <a href="#" className="block md:inline-block hover:text-accent">Contact</a>
