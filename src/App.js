@@ -4,6 +4,7 @@ import './App.css';
 import Hero from './components/Hero/Hero';
 import Projects from './components/Project/Project';
 import Testimonials from './components/Testinomial/Testinomial';
+import reviews from './components/Data';
 const projects = [
   {
     title: "Project 1",
@@ -57,7 +58,11 @@ function App() {
      <Projects
      projects={projects}
       />
-    <Testimonials/>
+              
+        <div className='bg-gray-900 flex justify-center text-white'>
+        <Testimonials reviews={reviews} />
+        </div>
+    
     </div>
   );
 }
