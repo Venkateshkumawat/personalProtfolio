@@ -21,8 +21,16 @@ const Header = () => {
           </button>
         </div>
         <nav className="md:flex md:space-x-10 md:m-5 hidden md:block">
-          <a href="#" className="block md:inline-block hover:text-accent">Home</a>
-          {/* Use Link from react-scroll for smooth scrolling */}
+       
+          <Link
+            to="home"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="block md:inline-block hover:text-accent"
+          >Home</Link>
+
+
           <Link
             to="projects-section"
             spy={true}
@@ -32,8 +40,27 @@ const Header = () => {
           >
             Projects
           </Link>
-          <a href="#" className="block md:inline-block hover:text-accent">Skills</a>
-          <a href="#" className="block md:inline-block hover:text-accent">Blog</a>
+          <Link
+            to="skills"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="block md:inline-block hover:text-accent"
+          >
+            Skills
+          </Link>
+
+          
+          <Link
+            to="/blog"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="block md:inline-block hover:text-accent"
+          >
+            Blog
+          </Link>
+        
           <a href="#" className="block md:inline-block hover:text-accent">Contact</a>
         </nav>
         {/* Conditionally render SideNav component */}

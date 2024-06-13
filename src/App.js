@@ -4,9 +4,13 @@ import './App.css';
 import Hero from './components/Hero/Hero';
 import Projects from './components/Project/Project';
 import Testimonials from './components/Testinomial/Testinomial';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import reviews from './components/Data';
 import Skills from './components/Skills/Skills';
+import Blog from './components/Blog/Blog';
 import VismeForm from './components/VismeForm';
+import Footer from './components/Footer/Footer';
+import ScrollButton from './components/ScrollButton';
 const projects = [
   {
     title: "MERN stack simple business website",
@@ -28,7 +32,7 @@ const projects = [
   },
   {
     title: "Learning Management System (LMS)",
-    description: "earning Management System (LMS) website using React, MongoDB, and Node.js is a comprehensive platform for managing educational content and user interactions. It integrates MongoDB for database storage and Node.js for server-side logic, offering features like course management, user authentication, and progress tracking. This project leverages React for a modern, interactive user interface, enhancing the learning experience.",
+    description: "Learning Management System (LMS) website using React, MongoDB, and Node.js is a comprehensive platform for managing educational content and user interactions. It integrates MongoDB for database storage and Node.js for server-side logic, offering features like course management, user authentication, and progress tracking. This project leverages React for a modern, interactive user interface, enhancing the learning experience.",
     imageUrl: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3M3ZmExYTJwbG14dTNlOWJyNTJja292c3FnZzU3cWp0eWM4bDQzaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gPuYorHMJpng60CGqO/giphy.webp", // Placeholder image URL, replace it with your actual image URLs
     link: "#" // Placeholder link, replace it with your actual project links
   },
@@ -48,7 +52,8 @@ const projects = [
 ];
 function App() {
   return (
-    <div>
+    <Router>
+    <div id="home">
       <Header />
 
       <Hero
@@ -57,17 +62,22 @@ function App() {
         description="This is where I showcase my projects and skills."
       />
     
+
+      
      <Projects
      projects={projects}
       />
-              
+      <Blog/>        
         <div className='bg-gray-900 flex justify-center text-white'>
         <Testimonials reviews={reviews} />
 
         </div>
       <Skills />
       <VismeForm/>
+      <Footer/>
+      <ScrollButton/>
     </div>
+    </Router>
   );
 }
 
