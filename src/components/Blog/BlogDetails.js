@@ -92,7 +92,7 @@ const BlogDetails = () => {
 
   return (
     <div className="bg-gray-100 dark:bg-gray-900 mx-auto text-justify lg:py-5 lg:px-5">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-h-3xl mx-auto">
         {/* Blog Title */}
         <h1 className="text-4xl py-10 font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           <PrismicRichText field={post.data.title} />
@@ -167,10 +167,10 @@ const BlogDetails = () => {
                           className="w-12 h-12 rounded-full mr-4"
                         />
                         <div>
-                          <div className="font-bold">
+                          <div className="font-bold text-accent">
                             <PrismicRichText field={slice.primary.name_of_the_author} />
                           </div>
-                          <div className="text-sm text-gray-500 dark:text-gray-400">
+                          <div className="text-sm text-accent-500 dark:text-gray-400">
                             Author
                           </div>
                         </div>

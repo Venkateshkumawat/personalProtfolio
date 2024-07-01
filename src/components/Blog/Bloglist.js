@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { PrismicRichText } from '@prismicio/react';
 import client from '../../prismic'; // Adjust the path as per your project structure
@@ -9,7 +9,7 @@ const BlogList = () => {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const cardRefs = React.useRef([]);
+  const cardRefs = useRef([]);
 
   const pageSize = 5; // Adjust the page size as needed
 
@@ -36,7 +36,8 @@ const BlogList = () => {
   }, [currentPage]);
 
   const animateCards = (numCards) => {
-    gsap.fromTo(cardRefs.current, 
+    gsap.fromTo(
+      cardRefs.current,
       { opacity: 0, y: 50, scale: 0.9 },
       { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: 'power3.out', stagger: 0.2 }
     );
@@ -60,8 +61,8 @@ const BlogList = () => {
           <div className="lg:col-span-2">
             <div className="grid grid-cols-1 gap-10">
               {blogPosts.map((post, index) => (
-                <div 
-                  key={post.uid} 
+                <div
+                  key={post.uid}
                   ref={el => cardRefs.current[index] = el}
                   className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
                 >
@@ -82,8 +83,8 @@ const BlogList = () => {
                     <div className="text-gray-700 dark:text-gray-300 mb-4">
                       <PrismicRichText field={post.data.excerpt} />
                     </div>
-                    <Link 
-                      to={`/blog/${post.uid}`} 
+                    <Link
+                      to={`/blog/${post.uid}`}
                       className="text-blue-500 dark:text-blue-400 hover:underline"
                     >
                       Read more

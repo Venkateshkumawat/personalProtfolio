@@ -1,7 +1,7 @@
 // SideNav.js
 
 import React, { useRef } from 'react';
-
+import {Link} from 'react-router-dom';
 const SideNav = ({ isOpen, onClose }) => {
   const sideNavRef = useRef(null);
 
@@ -19,11 +19,11 @@ const SideNav = ({ isOpen, onClose }) => {
           <button className="text-xl" onClick={onClose}>×</button>
           <nav>
             <ul className="mt-10 space-y-2">
-              <li><a href="#" className="hover:text-accent">Home</a></li>
-              <li><a href="#" className="hover:text-accent">Projects</a></li>
-              <li><a href="#" className="hover:text-accent">Skills</a></li>
-              <li><a href="#" className="hover:text-accent">Blog</a></li>
-              <li><a href="#" className="hover:text-accent">Contact</a></li>
+            <li><Link to="/" className="hover:text-accent">Home</Link></li>
+            <li><Link to="/" className="hover:text-accent">Projects</Link></li>
+            <li><Link to="/qr" className="hover:text-accent">Tool</Link></li>
+            <li><Link to="/blog" className="hover:text-accent">Blog</Link></li>
+            <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
             </ul>
           </nav>
         </div>

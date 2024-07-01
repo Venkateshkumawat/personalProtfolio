@@ -27,7 +27,7 @@ const Header = () => {
         <nav className="md:flex md:space-x-10 md:m-5 hidden md:block">
        
           <Link
-            to="home"
+            to="/"
             spy={true}
             smooth={true}
             duration={500}
@@ -36,12 +36,13 @@ const Header = () => {
 
 
           <Link
-            to="/projects"
+            to="/qr"
+            smooth={true}
           >
-            Projects
+            Tool
           </Link>
           <Link
-            to="skills"
+            to="/skills"
             spy={true}
             smooth={true}
             duration={500}
@@ -53,11 +54,16 @@ const Header = () => {
           
           <Link
             to="/blog"
+            smooth={true}
           >
             Blog
           </Link>
         
-          <a href="#" className="block md:inline-block hover:text-accent">Contact</a>
+          <Link
+            to="/contact"
+          >
+            Contact
+          </Link>
         </nav>
         {/* Conditionally render SideNav component */}
         <SideNav isOpen={showNav} onClose={() => setShowNav(false)} />
