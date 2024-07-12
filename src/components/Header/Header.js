@@ -42,13 +42,13 @@ const Header = () => {
             Tool
           </Link>
           <Link
-            to="/skills"
+            to="/service"
             spy={true}
             smooth={true}
             duration={500}
             className="block md:inline-block hover:text-accent"
           >
-            Skills
+            Services
           </Link>
 
           

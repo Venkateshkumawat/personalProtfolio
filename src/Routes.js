@@ -11,6 +11,7 @@ import MainLayout from './layout/MainLayout';
 import client from './prismic';
 import BlogLayout from './layout/BlogLayout';
 import SideMenuLayout from './layout/SideMenuLayout';
+import Features from './components/Features/Features';
 const AppRoutes = (_params) => {
   return (
     <PrismicProvider client={client}>
@@ -26,6 +27,7 @@ const AppRoutes = (_params) => {
         <Route path="/blog" element={<BlogLayout><BlogPage /></BlogLayout>} />
         <Route path="/blog/:uid" element={<BlogLayout><BlogDetails /></BlogLayout>} />
         <Route path="/qr" element={<SideMenuLayout><QRCode/></SideMenuLayout>} />
+        <Route path="/service" element={<BlogLayout><Features /></BlogLayout>}/>
       </Routes>
     </Router>
     </PrismicProvider>
